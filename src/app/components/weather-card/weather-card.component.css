@@ -1,0 +1,52 @@
+.example-card {
+    width: 500px;
+    margin-bottom: 8px;
+  }
+
+.temp-table {
+    border-collapse: collapse;
+    width: 90%;
+    margin: auto;
+    text-align: center;
+}
+
+table {
+    font-size: 16px;
+}
+
+.table {
+    margin-left: 20px;
+    font-size: 17px;
+}
+
+.table th {
+    text-align: right;
+}
+
+h2 {
+    margin-top: 15px;
+    margin-bottom: 0 !important;
+    margin-left: 30px;
+}
+
+mat-card-footer {
+    text-align: center;
+    font-size: 22px;
+    padding: 15px 0;
+}
+
+.cards {
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    margin: auto;   
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+mat-card {
+    box-shadow: 0 0 10px 3px rgba(0, 0, 0, 0.296);
+    padding: 10px;
+    border-radius: 5px;
+}

@@ -1,0 +1,44 @@
+form {
+    width: 80%;
+    margin: 30px auto 0 auto;
+}
+
+mat-card {
+    padding: 20px 0;
+}
+
+button {
+    width: fit-content;
+    margin: auto;
+}
+
+.form-field {
+    width: 48%;
+    margin: 1%;
+}
+
+h1 {
+    text-align: center;
+    color: #694FB8;
+    font-weight: 700;
+    font-size: 35px;
+}
+
+.cards {
+    padding-top: 20px;
+    display: flex;
+    gap: 10px;
+    width: 80%;
+    margin: auto;   
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.error {
+    width: fit-content;
+    margin: auto;
+}
+
+.error img {
+    height: 400px;
+}

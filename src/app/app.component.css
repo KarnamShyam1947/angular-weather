@@ -1,0 +1,34 @@
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+mat-toolbar {
+    padding: 0 50px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 32px;
+}
+
+ul li {
+    display: inline;
+    line-height: 70px;
+}
+
+ul li a {
+    padding: 5px 10px;
+    font-size: 20px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: all 0.3s;
+    color: white;
+    text-decoration: none;
+}
+
+ul li a.active,
+ul li a:hover {
+    border-radius: 5px;
+    background-color: #F5CE3D;
+    color: black;
+}

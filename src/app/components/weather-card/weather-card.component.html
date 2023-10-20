@@ -1,0 +1,292 @@
+<mat-card class="example-card">
+    <mat-card-header>
+        <mat-card-title-group>
+            <mat-card-title>{{ data['datetime'] }}</mat-card-title>
+            <mat-card-subtitle>
+                {{ address }} <br>
+                {{ data['conditions'] }}
+            </mat-card-subtitle>
+            <img mat-card-lg-image [src]="data['icon_url']" >
+        </mat-card-title-group>
+    </mat-card-header>
+
+    
+    <mat-card-content>
+        <table class="table">
+            <tr>
+                <th>Humidity : </th>
+                <td>{{ data['humidity'] }}</td>
+            </tr>
+            
+            <tr>
+                <th>Wind Speed : </th>
+                <td>{{ data['windspeed'] }} m/s</td>
+            </tr>
+        </table>
+
+        <h2>Temperature</h2>
+        <table class="temp-table">
+            <tr>
+                <th>Min</th>
+                <th>Mean</th>
+                <th>Max</th>
+            </tr>
+    
+            <tr>
+                <td>{{ data['tempmin'] }} &deg; C</td>
+                <td>{{ data['temp'] }} &deg; C</td>
+                <td>{{ data['tempmax'] }} &deg; C</td>
+            </tr>
+        </table>
+
+        <h2>Sun raise and set</h2>
+        <table class="temp-table">
+            <tr>
+                <th>Raise</th>
+                <th>Set</th>
+            </tr>
+    
+            <tr>
+                <td>{{ data['sunrise'] }} </td>
+                <td>{{ data['sunset'] }} </td>
+            </tr>
+        </table>
+
+    </mat-card-content>
+    <mat-card-footer>
+        {{ data['description'] }}
+    </mat-card-footer>
+</mat-card>
+
+<!-- 
+<div class="cards">
+
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{ sampleData['days'][0]['datetime'] }}</mat-card-title>
+                <mat-card-subtitle>Condition : {{ sampleData['days'][0]['conditions'] }}</mat-card-subtitle>
+                <img mat-card-lg-image [src]="sampleData['days'][0]['icon_url']" >
+            </mat-card-title-group>
+        </mat-card-header>
+    
+        
+        <mat-card-content>
+            <table class="table">
+                <tr>
+                    <th>Humidity : </th>
+                    <td>{{ sampleData['days'][0]['humidity'] }}</td>
+                </tr>
+                
+                <tr>
+                    <th>Wind Speed : </th>
+                    <td>{{ sampleData['days'][0]['windspeed'] }} m/s</td>
+                </tr>
+            </table>
+    
+            <h2>Temperature</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Min</th>
+                    <th>Mean</th>
+                    <th>Max</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['tempmin'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['temp'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['tempmax'] }} &deg; C</td>
+                </tr>
+            </table>
+    
+            <h2>Sun raise and set</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Raise</th>
+                    <th>Set</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['sunrise'] }} </td>
+                    <td>{{ sampleData['days'][0]['sunset'] }} </td>
+                </tr>
+            </table>
+    
+        </mat-card-content>
+        <mat-card-footer>
+            {{ sampleData['days'][0]['description'] }}
+        </mat-card-footer>
+    </mat-card>
+
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{ sampleData['days'][0]['datetime'] }}</mat-card-title>
+                <mat-card-subtitle>Condition : {{ sampleData['days'][0]['conditions'] }}</mat-card-subtitle>
+                <img mat-card-lg-image [src]="sampleData['days'][0]['icon_url']" >
+            </mat-card-title-group>
+        </mat-card-header>
+    
+        
+        <mat-card-content>
+            <table class="table">
+                <tr>
+                    <th>Humidity : </th>
+                    <td>{{ sampleData['days'][0]['humidity'] }}</td>
+                </tr>
+                
+                <tr>
+                    <th>Wind Speed : </th>
+                    <td>{{ sampleData['days'][0]['windspeed'] }} m/s</td>
+                </tr>
+            </table>
+    
+            <h2>Temperature</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Min</th>
+                    <th>Mean</th>
+                    <th>Max</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['tempmin'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['temp'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['tempmax'] }} &deg; C</td>
+                </tr>
+            </table>
+    
+            <h2>Sun raise and set</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Raise</th>
+                    <th>Set</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['sunrise'] }} </td>
+                    <td>{{ sampleData['days'][0]['sunset'] }} </td>
+                </tr>
+            </table>
+    
+        </mat-card-content>
+        <mat-card-footer>
+            {{ sampleData['days'][0]['description'] }}
+        </mat-card-footer>
+    </mat-card>
+    
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{ sampleData['days'][0]['datetime'] }}</mat-card-title>
+                <mat-card-subtitle>Condition : {{ sampleData['days'][0]['conditions'] }}</mat-card-subtitle>
+                <img mat-card-lg-image [src]="sampleData['days'][0]['icon_url']" >
+            </mat-card-title-group>
+        </mat-card-header>
+    
+        
+        <mat-card-content>
+            <table class="table">
+                <tr>
+                    <th>Humidity : </th>
+                    <td>{{ sampleData['days'][0]['humidity'] }}</td>
+                </tr>
+                
+                <tr>
+                    <th>Wind Speed : </th>
+                    <td>{{ sampleData['days'][0]['windspeed'] }} m/s</td>
+                </tr>
+            </table>
+    
+            <h2>Temperature</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Min</th>
+                    <th>Mean</th>
+                    <th>Max</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['tempmin'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['temp'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['tempmax'] }} &deg; C</td>
+                </tr>
+            </table>
+    
+            <h2>Sun raise and set</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Raise</th>
+                    <th>Set</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['sunrise'] }} </td>
+                    <td>{{ sampleData['days'][0]['sunset'] }} </td>
+                </tr>
+            </table>
+    
+        </mat-card-content>
+        <mat-card-footer>
+            {{ sampleData['days'][0]['description'] }}
+        </mat-card-footer>
+    </mat-card>
+    
+    <mat-card class="example-card">
+        <mat-card-header>
+            <mat-card-title-group>
+                <mat-card-title>{{ sampleData['days'][0]['datetime'] }}</mat-card-title>
+                <mat-card-subtitle>Condition : {{ sampleData['days'][0]['conditions'] }}</mat-card-subtitle>
+                <img mat-card-lg-image [src]="sampleData['days'][0]['icon_url']" >
+            </mat-card-title-group>
+        </mat-card-header>
+    
+        
+        <mat-card-content>
+            <table class="table">
+                <tr>
+                    <th>Humidity : </th>
+                    <td>{{ sampleData['days'][0]['humidity'] }}</td>
+                </tr>
+                
+                <tr>
+                    <th>Wind Speed : </th>
+                    <td>{{ sampleData['days'][0]['windspeed'] }} m/s</td>
+                </tr>
+            </table>
+    
+            <h2>Temperature</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Min</th>
+                    <th>Mean</th>
+                    <th>Max</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['tempmin'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['temp'] }} &deg; C</td>
+                    <td>{{ sampleData['days'][0]['tempmax'] }} &deg; C</td>
+                </tr>
+            </table>
+    
+            <h2>Sun raise and set</h2>
+            <table class="temp-table">
+                <tr>
+                    <th>Raise</th>
+                    <th>Set</th>
+                </tr>
+        
+                <tr>
+                    <td>{{ sampleData['days'][0]['sunrise'] }} </td>
+                    <td>{{ sampleData['days'][0]['sunset'] }} </td>
+                </tr>
+            </table>
+    
+        </mat-card-content>
+        <mat-card-footer>
+            {{ sampleData['days'][0]['description'] }}
+        </mat-card-footer>
+    </mat-card>
+</div> -->
+

@@ -1,0 +1,47 @@
+<form [formGroup]="weatherForm" (ngSubmit)="getWeather()">
+    <mat-card>
+        <h1>Weather Forecast</h1>
+        <mat-card-content>
+            <mat-form-field class="form-field" appearance="outline">
+                <input type="text" formControlName="city" matInput>
+                <mat-label>Enter city name</mat-label>
+
+                <mat-error *ngIf="weatherForm.get('city')?.touched && weatherForm.get('city')?.hasError('required')">
+                    <b>City Name</b> is required
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="form-field" appearance="outline">
+                <mat-select formControlName="days">
+                    <mat-option value="5">5</mat-option>
+                    <mat-option value="10">10</mat-option>
+                    <mat-option value="15">15</mat-option>
+                </mat-select>
+                <mat-label>Select no. of days</mat-label>
+            </mat-form-field>
+        </mat-card-content>
+
+        <button 
+            [disabled]="weatherForm.invalid"
+            mat-raised-button color="accent">
+            Submit
+        </button>
+
+        <div class="result">
+        </div>
+    </mat-card>
+</form>
+
+<div *ngIf="result" class="cards">
+    <app-weather-card
+        *ngFor="let data of result['days']"
+        [data]="data"
+        [address]="result['resolvedAddress']">
+        
+    </app-weather-card>
+</div>
+
+<div class="error" *ngIf="error">
+    <img src="../../../assets/404.png" alt="">
+    <h1>SORRY...! We are unable to find requested city</h1>
+</div>
