@@ -16,7 +16,7 @@ api = Api(
 
 weather = Namespace('Weather Api', path='/weather-api')
 
-API_KEY = '3MUNGGH2VYWHHDXSBBDN24WHL'
+API_KEY = '<YOUR-API-KEY>'
 
 @weather.route('/current/<string:city>')
 class CurrentWeatherResource(Resource):
